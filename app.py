@@ -1,10 +1,4 @@
 # cSpell:disable
-try:
-    import flask
-    import requests
-except ImportError:
-    raise ImportError("error when importing flask and requests")
-
 from flask import Flask, request, Response, send_file
 import requests
 import json
@@ -32,7 +26,6 @@ def get_response(data: dict = None, code: int = 200) -> Response:
     if data is None:
         return Response(None, code, HEADERS, mimetype=TYPE)
     return Response(json.dumps(data, indent=2), code, HEADERS, mimetype=TYPE)
-
 
 
 @app.route("/scopus-api")
@@ -82,7 +75,6 @@ def scopus_api():
                 writer.writerow(result.values())
 
         return send_file(PATH, "CSV", True, "results.csv")
-
 
 
 app.run(debug=True)

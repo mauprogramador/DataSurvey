@@ -11,7 +11,7 @@ Essa API foi desenvolvida a fim de prover maior facilidade na busca de artigos p
 
 ### 1. Link de Busca
 
-Essa API é acessada por um link no qual devem ser inseridos os parâmetros necessários para busca de artigos na Scopus. O returno desse Endpoint será um arquivo **.csv** contendo as informações dos artigos encontrados.
+Essa API é acessada por um link no qual devem ser inseridos os parâmetros necessários para busca de artigos na Scopus. O retorno desse Endpoint será um arquivo **.csv** contendo as informações dos artigos encontrados.
 
 ```bash
 # É necessário inserir a API-Key e as palavras-chave
@@ -47,10 +47,20 @@ keywords=artificial intelligence OR machine learning,robots
 
 ```bash
 # Exemplo de Link Completo
-/scopus-api?apikey=a333dem09d942bddc5e8a0fc590602c8&keywords=artificial intelligence,robots,machine learning,deep learning
+http://127.0.0.1:5000/scopus-api?apikey=a333dem09d942bddc5e8a0fc590602c8&keywords=artificial intelligence,robots,machine learning,deep learning
 ```
 
 ---
+
+## Configuração
+
+```bash
+# Criar amabiente virtual
+$ python3 -m venv .venv
+
+# Instalar dependencias
+$ pip3 install -r requirements.txt
+```
 
 ## Tabelas
 
